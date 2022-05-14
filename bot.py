@@ -1,6 +1,6 @@
 from discord.ext import commands
 from discord.ext.commands impport Bot
-from time import sleep
+import time
 import socket
 import discord
 
@@ -27,7 +27,7 @@ async def findip(ctx, times : int = 1, port : int = 22):
                 await ctx.send(f'Discovered {ip}:{port} at {date}')
 
             except:
-                sleep(1)
+                await asyncio.sleep(1)
                 print(f'Oop! {ip}:{port} doesn\'t seem to be working!')
 
             finally:
